@@ -3,9 +3,13 @@ pipeline {
     stages {
         stage('Git checkout'){
             steps {
-                git ''
+                git 'https://github.com/arunbeathi/python_app.git'
             }
         }
-        stage ('')
+        stage ('python_run'){
+            steps {
+                sh 'python3 app.py'
+            }
+        }
     }
 }
