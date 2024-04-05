@@ -11,9 +11,9 @@ pipeline {
                 sh 'pip install -r requirements.txt'
             }
         }
-        stage ('python_run'){
+        stage ('Docker build'){
             steps {
-                sh 'python3 app.py'
+                sh 'docker build -t hp .'
             }
         }
     }
